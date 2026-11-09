@@ -281,10 +281,10 @@ We believe in being open about this.
   template report without it.
 
 ## Team
-| Name | Role |
-|---|---|
-| Meenakshi Satpathy | Developer |
-| Manas Girdhar | Developer |
+| Name | Role | GitHub |
+|---|---|---|
+| Meenakshi Satpathy | Developer | [@meenakshisatpathy20-del](https://github.com/meenakshisatpathy20-del) |
+| Manas Girdhar | Developer | [@MG782469](https://github.com/MG782469) |
 
 ## Roadmap (final round)
 Verified remediation for F1 (approve → end hog sessions → verify recovery → escalate if not), a
