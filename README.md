@@ -289,4 +289,4 @@ We believe in being open about this.
 ## Roadmap (final round)
 Verified remediation for F1 (approve → end hog sessions → verify recovery → escalate if not), a
 benchmark of 15 runs against the 4 baselines, browser voice summary, what-if blast-radius preview,
-then OpenTelemetry traces and Kubernetes events.
+then OpenTelemetry traces And Kubernetes events.
