@@ -1,0 +1,275 @@
+{
+ "generated": "2026-11-10 06:22 UTC",
+ "runs": [
+  {
+   "fault": "db_pool",
+   "truth": [
+    "user-db"
+   ],
+   "jarvis": [
+    "user-db"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.3,
+   "baselines": {
+    "random": "user-db",
+    "most_errors": "gateway",
+    "first_anomaly": "auth-service",
+    "most_depended_on": "user-db"
+   },
+   "k": 3
+  },
+  {
+   "fault": "payment_slow",
+   "truth": [
+    "payment-service"
+   ],
+   "jarvis": [
+    "payment-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 7.2,
+   "baselines": {
+    "random": "gateway",
+    "most_errors": "payment-service",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "auth_down",
+   "truth": [
+    "auth-service"
+   ],
+   "jarvis": [
+    "auth-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 3.8,
+   "baselines": {
+    "random": "auth-service",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "db_pool",
+   "truth": [
+    "user-db"
+   ],
+   "jarvis": [
+    "user-db"
+   ],
+   "confidence": "High",
+   "ttd_s": 5.1,
+   "baselines": {
+    "random": "user-db",
+    "most_errors": "auth-service",
+    "first_anomaly": "user-db",
+    "most_depended_on": "user-db"
+   },
+   "k": 3
+  },
+  {
+   "fault": "payment_slow",
+   "truth": [
+    "payment-service"
+   ],
+   "jarvis": [
+    "payment-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 6.8,
+   "baselines": {
+    "random": "gateway",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "auth_down",
+   "truth": [
+    "auth-service"
+   ],
+   "jarvis": [
+    "auth-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 3.7,
+   "baselines": {
+    "random": "auth-service",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "db_pool",
+   "truth": [
+    "user-db"
+   ],
+   "jarvis": [
+    "user-db"
+   ],
+   "confidence": "High",
+   "ttd_s": 1.7,
+   "baselines": {
+    "random": "user-db",
+    "most_errors": "auth-service",
+    "first_anomaly": "user-db",
+    "most_depended_on": "user-db"
+   },
+   "k": 3
+  },
+  {
+   "fault": "payment_slow",
+   "truth": [
+    "payment-service"
+   ],
+   "jarvis": [
+    "payment-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 6.7,
+   "baselines": {
+    "random": "gateway",
+    "most_errors": "payment-service",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "auth_down",
+   "truth": [
+    "auth-service"
+   ],
+   "jarvis": [
+    "auth-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.7,
+   "baselines": {
+    "random": "auth-service",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "db_pool",
+   "truth": [
+    "user-db"
+   ],
+   "jarvis": [
+    "user-db"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.8,
+   "baselines": {
+    "random": "user-db",
+    "most_errors": "gateway",
+    "first_anomaly": "auth-service",
+    "most_depended_on": "user-db"
+   },
+   "k": 3
+  },
+  {
+   "fault": "payment_slow",
+   "truth": [
+    "payment-service"
+   ],
+   "jarvis": [
+    "payment-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 6.7,
+   "baselines": {
+    "random": "gateway",
+    "most_errors": "payment-service",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "auth_down",
+   "truth": [
+    "auth-service"
+   ],
+   "jarvis": [
+    "auth-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.0,
+   "baselines": {
+    "random": "auth-service",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "db_pool",
+   "truth": [
+    "user-db"
+   ],
+   "jarvis": [
+    "user-db"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.4,
+   "baselines": {
+    "random": "user-db",
+    "most_errors": "gateway",
+    "first_anomaly": "auth-service",
+    "most_depended_on": "user-db"
+   },
+   "k": 3
+  },
+  {
+   "fault": "payment_slow",
+   "truth": [
+    "payment-service"
+   ],
+   "jarvis": [
+    "payment-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 6.8,
+   "baselines": {
+    "random": "gateway",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  },
+  {
+   "fault": "auth_down",
+   "truth": [
+    "auth-service"
+   ],
+   "jarvis": [
+    "auth-service"
+   ],
+   "confidence": "High",
+   "ttd_s": 4.1,
+   "baselines": {
+    "random": "auth-service",
+    "most_errors": "gateway",
+    "first_anomaly": "gateway",
+    "most_depended_on": "user-db"
+   },
+   "k": 2
+  }
+ ]
+}
