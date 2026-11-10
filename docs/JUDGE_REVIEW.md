@@ -39,7 +39,7 @@ over-claimed, and fix what we found. Every row below was found by testing the ru
 | # | Gap a judge would raise | Fix | Verified by |
 |---|---|---|---|
 | 21 | "It only diagnoses; does it fix anything?" | Verified fix: preview → human approval → allow-listed action → 60 s recovery check → Resolved / Escalated, with audit log and Undo | Live on Docker: F1 recovered in 10.1 s, F3 in 10.1 s |
-| 22 | Anyone with the public link could Break / Heal the demo | **Optional lab key** for inject / heal / commit / reveal and fix approval (off by default so judges can use the lab freely) | 401 without the key when set |
+| 22 | Anyone with the public link could Break / Heal the demo | Accepted on purpose so judges can use the lab freely: one fault at a time, and Heal restores everything | Lab key tried, then removed for judge access |
 | 23 | A fix could leak the blind-test answer (e.g. the hog's role name) | Fix stays locked, and its preview hides details, until the reveal | Preview returns "Locked" before reveal |
 | 24 | Capping "whichever role has most connections" could hit the app itself | Only roles holding idle, long-held sessions; protected roles (`app`, `postgres`) never capped; refuses below 3 idle sessions | Unit tests + live run capped only the hog |
 | 25 | A cap left behind would break the next test | Cap removed automatically when the incident resolves (and by Undo) | Roles back to unlimited after heal |

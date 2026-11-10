@@ -38,7 +38,6 @@ detector = Detector(CFG, START)
 explainer = Explainer(CFG)
 engine = Engine(CFG, store, detector, explainer)
 remediator = Remediator(CFG, engine, store, detector)
-LAB_KEY = os.getenv("LAB_KEY", "")
 webhook_log, uploads = [], []
 clients: set = set()
 
@@ -265,14 +264,6 @@ def incident(iid: str):
     return inc if inc else JSONResponse(status_code=404, content={"error": "not found"})
 
 
-def _lab_ok(request: Request) -> bool:
-    return not LAB_KEY or hmac.compare_digest(request.headers.get("x-lab-key", ""), LAB_KEY)
-
-
-def _denied():
-    return JSONResponse(status_code=401, content={"error": "lab key required"})
-
-
 @app.get("/incidents/{iid}/fix/preview")
 def fix_preview(iid: str):
     return remediator.preview(iid)
@@ -280,16 +271,12 @@ def fix_preview(iid: str):
 
 @app.post("/incidents/{iid}/fix/unlock")
 def fix_unlock(iid: str, request: Request):
-    if not _lab_ok(request):
-        return _denied()
     remediator.unlock(iid)
     return {"ok": True}
 
 
 @app.post("/incidents/{iid}/fix")
 async def fix_run(iid: str, request: Request):
-    if not _lab_ok(request):
-        return _denied()
     body = await request.json() if (await request.body()) else {}
     r = await asyncio.to_thread(remediator.run, iid, body.get("approver"))
     return JSONResponse(status_code=400 if "error" in r else 200, content=r)
@@ -297,8 +284,6 @@ async def fix_run(iid: str, request: Request):
 
 @app.post("/api/actions/{aid}/undo")
 def fix_undo(aid: str, request: Request):
-    if not _lab_ok(request):
-        return _denied()
     r = remediator.undo(aid)
     return JSONResponse(status_code=400 if "error" in r else 200, content=r)
 

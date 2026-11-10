@@ -4,13 +4,13 @@ Each run: chaos injects a fault (truth hidden) -> J.A.R.V.I.S. diagnoses from te
 its signed answer is committed -> truth revealed -> heal -> wait until quiet.
 Every baseline sees the same incident J.A.R.V.I.S. saw (recorded at diagnosis time).
 
-Usage (stack running, warmed up >= 60 s):  LAB_KEY=... python scripts/benchmark.py 5
+Usage (stack running, warmed up >= 60 s):  python scripts/benchmark.py 5
 """
 import json, os, statistics, sys, time
 import httpx
 
 JARVIS, CHAOS = "http://localhost:8000", "http://localhost:8090"
-H = {"x-lab-key": os.getenv("LAB_KEY", "")}
+H = {}
 FAULTS = ["db_pool", "payment_slow", "auth_down"]
 NAMES = {"db_pool": "F1 DB exhaustion", "payment_slow": "F2 payment slowdown", "auth_down": "F3 auth down"}
 METHODS = ["jarvis", "random", "most_errors", "first_anomaly", "most_depended_on"]
