@@ -16,7 +16,7 @@ def recommend(rca: dict, anoms: dict) -> list:
                       "Cap each service's connection pool so one client cannot take every slot.",
                       "Add a statement_timeout and idle_in_transaction_session_timeout."],
             "addresses": next((e for e in cand["evidence"] if "Own fault" in e), cite),
-            "automated": "Final round: end the hog sessions after approval, then verify connections < 70% and login success > 95%.",
+            "automated": "Available below as a verified fix: cap the hogging client after approval, then confirm DB use < 70% and login success > 95%.",
         })
     elif codes & {"health", "silent"}:
         recs.append({
@@ -25,7 +25,7 @@ def recommend(rca: dict, anoms: dict) -> list:
                       f"Check {top}'s last deploy and its final log lines before it stopped.",
                       "Make callers fail fast with a clear retry message while it is down."],
             "addresses": next((e for e in cand["evidence"] if "Own fault" in e), cite),
-            "automated": "Final round: restart after approval, then check health and error rate.",
+            "automated": "Available below as a verified fix: restart after approval, then confirm health and login success.",
         })
     elif codes & {"p95", "z_p95"}:
         recs.append({
@@ -34,7 +34,7 @@ def recommend(rca: dict, anoms: dict) -> list:
                       "Fail fast with a clear retry message instead of holding the user.",
                       f"Add {top} workers / replicas if the slowness is load-related."],
             "addresses": next((e for e in cand["evidence"] if "Own fault" in e), cite),
-            "automated": "None tonight: suggestion only.",
+            "automated": "No automatic fix (none is safe here): suggestion only.",
         })
     else:
         recs.append({
@@ -42,7 +42,7 @@ def recommend(rca: dict, anoms: dict) -> list:
             "steps": [f"Inspect {top}'s most frequent error type and its last deploy or config change.",
                       "Roll back the last change if the errors started right after it."],
             "addresses": cite,
-            "automated": "None tonight: suggestion only.",
+            "automated": "No automatic fix (none is safe here): suggestion only.",
         })
     if rca.get("confidence") == "Not sure" and rca.get("not_sure_check"):
         recs.insert(0, {"title": "Confirm the cause first", "steps": [rca["not_sure_check"]],
