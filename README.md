@@ -15,7 +15,9 @@
 
 NITS Hacks 9.0 · Problem Statement 1 · Software Track
 
-### 🔴 Live demo: _link added after deployment_
+### 🔴 Live demo: http://172.198.139.217/
+
+
 
 
 <img src="docs/screenshots/f1-live-incident.png" alt="J.A.R.V.I.S. dashboard during a database fault: user-db ringed as the likely root cause, auth and gateway marked as symptoms" width="900">
