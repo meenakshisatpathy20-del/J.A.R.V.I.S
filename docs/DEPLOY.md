@@ -15,7 +15,7 @@ The hidden truth stays protected by signed commit-then-reveal.
 
 Recommended size: **2 vCPU, 4 GB RAM** (works on 2 GB with swap), Ubuntu 22.04/24.04.
 
-## Option A: a cloud VM (permanent link): Oracle Cloud Always Free, Azure, AWS, GCP
+## Deploy on a cloud VM (free, always on): Oracle Cloud Always Free
 One command on a fresh Ubuntu VM does everything (Docker, VM firewall, code, `.env`, start, auto-restart
 after reboot):
 ```bash
@@ -43,20 +43,6 @@ It prints the live link: `http://<VM-public-IP>:8000/` (lab at `/lab`). Run it a
 5. Run the one-command setup above. Open the printed link and wait ~60 s for warm-up.
 
 The image builds natively on Oracle's ARM CPUs (Python, Postgres and Caddy images are multi-arch).
-
-## Option B: GitHub Codespaces (free, temporary link)
-The repo includes `.devcontainer/`, so setup is automatic: Docker is installed, `.env` is generated with
-random secrets, and the demo starts on port **8000** every time the codespace starts or wakes up.
-
-1. On the repo page: **Code → Codespaces → Create codespace on main**.
-2. Wait for the terminal to print `J.A.R.V.I.S. is starting on port 8000` (first time: about 5–8 minutes).
-3. Open the **Ports** tab, right-click port **8000 → Port Visibility → Public**.
-4. Copy its **Forwarded Address** (`https://<name>-8000.app.github.dev`): that is the live link.
-   The lab is the same address plus `/lab`.
-
-The codespace sleeps after 30 idle minutes. Reopen it from GitHub (**Code → Codespaces**) before judging;
-the demo restarts by itself and the link stays the same. The 4-core machine uses free Codespaces hours
-(GitHub's free quota covers many hours of demos per month).
 
 ## Optional lab key
 By default the lab is open to anyone with the link, so judges can run the blind test without a key. To lock

@@ -10,14 +10,13 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-0057ff?logo=fastapi&logoColor=white)
 ![Postgres](https://img.shields.io/badge/PostgreSQL-16-0057ff?logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker_Compose-ready-0057ff?logo=docker&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-9_passing-00c26e)
-![Blind drill](https://img.shields.io/badge/blind_drill-13%2F13_correct-00c26e)
+![Tests](https://img.shields.io/badge/tests-11_passing-00c26e)
+![Benchmark](https://img.shields.io/badge/blind_benchmark-15%2F15_correct-00c26e)
 
 NITS Hacks 9.0 · Problem Statement 1 · Software Track
 
-### 🔴 [Live demo](https://special-space-engine-jjw7gjv69g6g3jjp6-8000.app.github.dev/) · [Blind test lab](https://special-space-engine-jjw7gjv69g6g3jjp6-8000.app.github.dev/lab)
+### 🔴 Live demo: _link added after deployment_
 
-<sub>Hosted on GitHub Codespaces. If the link does not load, the codespace is asleep: run it locally in 60 seconds with the steps below.</sub>
 
 <img src="docs/screenshots/f1-live-incident.png" alt="J.A.R.V.I.S. dashboard during a database fault: user-db ringed as the likely root cause, auth and gateway marked as symptoms" width="900">
 
@@ -142,7 +141,7 @@ docker compose -f docker-compose.yml -f docker-compose.deploy.yml up -d --build
 Serves the dashboard, lab and chaos behind one Caddy proxy on port 8000 (HTTPS automatically with a domain).
 On a fresh Ubuntu cloud VM (Oracle Cloud Always Free, Azure, AWS, GCP) one command does everything:
 `curl -fsSL https://raw.githubusercontent.com/meenakshisatpathy20-del/J.A.R.V.I.S/main/scripts/vm_setup.sh | bash`.
-Step-by-step guides (Oracle Cloud, GitHub Codespaces): [docs/DEPLOY.md](docs/DEPLOY.md).
+Step-by-step guide for a free, always-on Oracle Cloud VM: [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ### Without Docker (fallback)
 Needs Python 3.11+ and a local Postgres 16 started with `max_connections=20`.
