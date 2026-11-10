@@ -112,8 +112,9 @@ setInterval(async () => {
 }, 3000);
 
 function labKey(force){
-  let k = null; try { k = sessionStorage.getItem("jarvis-lab-key"); } catch (e) {}
-  if (!k || force) { k = prompt("Lab key (from the team's submission notes):") || ""; try { sessionStorage.setItem("jarvis-lab-key", k); } catch (e) {} }
+  // Ask only when the server has refused without a key (force = true after a 401). No key set = no prompt.
+  let k = ""; try { k = sessionStorage.getItem("jarvis-lab-key") || ""; } catch (e) {}
+  if (force) { k = prompt("This demo is locked. Lab key (from the team's submission notes):") || ""; try { sessionStorage.setItem("jarvis-lab-key", k); } catch (e) {} }
   return k;
 }
 async function chaos(path, opts = {}, retried){
