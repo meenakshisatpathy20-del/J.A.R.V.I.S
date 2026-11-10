@@ -27,7 +27,6 @@ fi
 export CHAOS_TOKEN=${CHAOS_TOKEN:-local-chaos-token}
 export INGEST_TOKEN=${INGEST_TOKEN:-local-ingest-token}
 export DIAGNOSIS_SIGNING_KEY=${DIAGNOSIS_SIGNING_KEY:-local-signing-key}
-export LAB_KEY=${LAB_KEY:-}
 export JARVIS_DATA_DIR=$ROOT/.local/jarvis-data
 export JARVIS_URL=http://127.0.0.1:8000
 APP_DSN="host=127.0.0.1 port=5432 dbname=payments user=app password=${APP_DB_PASSWORD:-app}"

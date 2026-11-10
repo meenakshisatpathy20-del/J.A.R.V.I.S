@@ -10,7 +10,7 @@ import os
 
 import httpx
 
-H = {"x-lab-key": os.getenv("LAB_KEY", "")}
+H = {}
 
 JARVIS = "http://localhost:8000"
 CHAOS = "http://localhost:8090"

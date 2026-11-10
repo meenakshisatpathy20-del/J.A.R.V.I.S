@@ -376,15 +376,8 @@ async function loadSources(){
 
 // ---------- verified fix (preview -> approve -> recovery check) ----------
 const previews = {};
-function labKey(force){
-  // Ask only when the server has refused without a key (force = true after a 401). No key set = no prompt.
-  let k = ""; try { k = sessionStorage.getItem("jarvis-lab-key") || ""; } catch (e) {}
-  if (force) { k = prompt("This demo is locked. Lab key (from the team's submission notes):") || ""; try { sessionStorage.setItem("jarvis-lab-key", k); } catch (e) {} }
-  return k;
-}
-async function post(url, body, retried){
-  const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json","x-lab-key":labKey()}, body: JSON.stringify(body || {})});
-  if (r.status === 401 && !retried) { labKey(true); return post(url, body, true); }
+async function post(url, body){
+  const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body || {})});
   return r.json();
 }
 function fixHtml(i){

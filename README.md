@@ -49,7 +49,6 @@ docker compose up --build
 4. Open the incident on the dashboard → **Verified fix** → **Preview fix** → **Approve & run**, and watch J.A.R.V.I.S.
    check that the platform actually recovered.
 
-Optional: set `LAB_KEY` in `.env` to require a key for Break / Heal / Reveal and fixes on a public link (off by default).
 
 | Blind test lab | Evidence for every point of the score |
 |---|---|
@@ -273,8 +272,6 @@ scripts/             run_local.sh, setup_local_db.sh, fault_drill.py
 Run the tests: `pip install pytest pyyaml && python -m pytest -q tests`
 
 ## Security of the demo
-- **Optional lab key:** set `LAB_KEY` to require a key (header `x-lab-key`) for Break / Heal / Reveal and fix approval.
-  Off by default so judges can use the lab freely; one fault at a time, and Heal restores everything.
 - `/ingest` and `/webhook/alert` require the `x-ingest-token` header (blocks fake telemetry).
 - The dashboard and chaos are published on `127.0.0.1` only.
 - No external API keys are needed. The values in `.env` are passwords you choose; `GEMINI_API_KEY` is optional.
