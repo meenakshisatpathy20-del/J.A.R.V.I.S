@@ -15,7 +15,7 @@
 
 NITS Hacks 9.0 · Problem Statement 1 · Software Track
 
-### 🔴 Live demo: http://172.198.139.217/
+### 🔴 Live demo: http://172.198.139.217/ · Blind test lab: http://172.198.139.217/lab
 
 
 
@@ -38,18 +38,15 @@ collapses the alert storm into incidents, ranks the root cause **with evidence**
 and suggests a fix. A separate chaos controller injects faults **blindly**: J.A.R.V.I.S. sees only
 telemetry, and the hidden ground truth is revealed only after it has published a signed diagnosis.
 
-## Try it in 60 seconds
-```bash
-git clone https://github.com/meenakshisatpathy20-del/J.A.R.V.I.S.git
-cd J.A.R.V.I.S
-cp .env.example .env      # any random values work; no external API keys needed
-docker compose up --build
-```
-1. Open **http://localhost:8000** and wait for the "Starting up / Warm-up" chip to disappear (~60 s).
-2. Open **http://localhost:8000/lab**, pick a fault (or 🎲 *Surprise me*), press **BREAK**.
+## Try it in 60 seconds (live, nothing to install)
+1. Open **http://172.198.139.217/** and wait for the "Starting up / Warm-up" chip to disappear (~60 s).
+2. Open **http://172.198.139.217/lab**, pick a fault (or 🎲 *Surprise me*), press **BREAK**.
 3. Watch the diagnosis appear, then **LOCK IN & REVEAL** the hidden ground truth.
 4. Open the incident on the dashboard → **Verified fix** → **Preview fix** → **Approve & run**, and watch J.A.R.V.I.S.
    check that the platform actually recovered.
+5. Back in the lab, press **HEAL ALL** so the next visitor starts from a healthy system.
+
+Prefer to run it yourself? See [Run it on your own machine](#run-it-on-your-own-machine-docker).
 
 
 | Blind test lab | Evidence for every point of the score |
@@ -122,7 +119,11 @@ only, the diagnosis is committed, then the hidden ground truth is revealed.
 benchmark (15 runs against 4 baselines is planned for the final round). See
 [docs/JUDGE_REVIEW.md](docs/JUDGE_REVIEW.md) for the gaps we found in our own build and how we fixed them.
 
-## Quick start (Docker)
+## Run it on your own machine (Docker)
+```bash
+git clone https://github.com/meenakshisatpathy20-del/J.A.R.V.I.S.git
+cd J.A.R.V.I.S
+```
 ```bash
 cp .env.example .env          # set any random values; GEMINI_API_KEY is optional
 docker compose up --build
